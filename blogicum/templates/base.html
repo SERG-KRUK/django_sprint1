@@ -35,7 +35,7 @@
           <p>
             Всю ночь и весь день шел дождь и дул сильный ...
           </p>
-          <a href="detail.html">Читать полный текст</a>
+          <a href="{% url 'blog:post_detail' posts.id %}">Читать полный текст</a>
         </article>
         <hr>
         <article>
@@ -54,7 +54,7 @@
           <p>
             Проснувшись поутру, я увидел, что наш корабль сняло с мели ...
           </p>
-          <a href="detail.html">Читать полный текст</a>
+          <a href="{% url 'blog:post_detail' posts.id %}">Читать полный текст</a>
         </article>
         <hr>
         <article>
@@ -73,7 +73,7 @@
           <p>
             Наш корабль, застигнутый в открытом море страшным штормом, потерпел крушение. ...
           </p>
-          <a href="detail.html">Читать полный текст</a>
+          <a href="{% url 'blog:post_detail' posts.id %}">Читать полный текст</a>
         </article>                 
       </div>
     </main>
