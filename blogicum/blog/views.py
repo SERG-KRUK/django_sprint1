@@ -45,13 +45,11 @@ posts = [
 ]
 
 
-# Открывает base.html
 def index(request):
     template = "blog/index.html"
     return render(request, template, {"posts": posts[::-1]})
 
 
-# Открывает detail.html
 def post_detail(request, id: int):
     template = "blog/detail.html"
     context = {"post": posts[id]}
