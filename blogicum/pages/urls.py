@@ -1,18 +1,10 @@
-from django.views.generic import TemplateView
 from django.urls import path
-
-
-class AboutPageView(TemplateView):
-    template_name = "pages/about.html"
-
-
-class RulesPageView(TemplateView):
-    template_name = "pages/rules.html"
-
+from . import views
 
 app_name = "pages"
 
+
 urlpatterns = [
-    path("about/", AboutPageView.as_view(), name="about"),
-    path("rules/", RulesPageView.as_view(), name="rules"),
+    path("pages/about/", views.about, name="about"),
+    path("pages/rules/", views.rules, name="rules"),
 ]
