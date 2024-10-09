@@ -49,13 +49,11 @@ def index(request):
     return render(request, "blog/index.html", {"posts": posts[::-1]})
 
 
-posts_dict = {post['id']: post for post in posts}
+posts_id = {post['id']: post for post in posts}
 
 
 def post_detail(request, id: int):
-    try:
-        posts_dict[id]
-    except KeyError:
+    if id not in posts_id:
         raise Http404("Ошибка: Данной страницы не существует")
     return render(request, "blog/detail.html", {"post": posts[id]})
 
