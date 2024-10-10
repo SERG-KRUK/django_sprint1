@@ -49,11 +49,11 @@ def index(request):
     return render(request, "blog/index.html", {"posts": posts[::-1]})
 
 
-posts_id = {post['id']: post for post in posts}
+all_posts = {post["id"]: post for post in posts}
 
 
 def post_detail(request, id: int):
-    if id not in posts_id:
+    if id not in all_posts:
         raise Http404("Ошибка: Данной страницы не существует")
     return render(request, "blog/detail.html", {"post": posts[id]})
 
